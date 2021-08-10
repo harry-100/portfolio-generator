@@ -1,0 +1,26 @@
+{
+  "name": "portolio-generator",
+  "version": "1.0.0",
+  "description": "this generates a portfolio using node and javascript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harry-100/portfolio-generator.git"
+  },
+  "keywords": [
+    "node",
+    "javacsript"
+  ],
+  "author": "Harry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harry-100/portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/harry-100/portfolio-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}
