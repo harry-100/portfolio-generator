@@ -1,14 +1,11 @@
 
 
-const inquirer = require('inquirer');const fs = require('fs');
+const inquirer = require('inquirer');
+const fs = require('fs');
 const generatePage = require('./src/page-template');
-const { type } = require('os');
-// const pageHTML = generatePage(name, gitHub);
 
-// fs.writeFile('index.html', pageHTML, err => {
-//     if (err) throw err;
-//     console.log("portfolio complete! Check out the index.html to see the output");
-// })
+
+
 
 const promptUser = () => {
 return inquirer.prompt([
@@ -132,8 +129,36 @@ const promptProject = portfolioData => {
 };
 
 promptUser()
-// .then(answers => console.log(answers))
 .then(promptProject)
 .then(portfolioData => {
-    console.log(portfolioData)
+    const pageHTML = generatePage(portfolioData);
+    
+    fs.writeFile('index.html', pageHTML, err => {
+    if (err) throw err;
+    console.log("portfolio complete! Check out the index.html to see the output");
 });
+    
+});
+
+// Mock data alternative 
+// const mockData = {
+//   name: 'harry',
+//   github: 'harry-2',
+//   confirmAbout: true,
+//   about: 'sdfsdfdsf sdffsdf sdfdsfsdf sdfsdfdsf',
+//   projects: [
+//     {
+//       name: 'proj-1',
+//       description: 'ffdfds',
+//       languages: ['HTML', 'CSS', 'javaScript'],
+//       feature: true,
+//       confirmAddProject: false
+//     }
+//   ]
+// }
+
+// const pageHTML = generatePage(portfolioData);
+// fs.writeFile('index.html', pageHTML, err => {
+// if (err) throw err;
+// console.log("portfolio complete! Check out the index.html to see the output");
+// });
